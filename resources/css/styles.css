@@ -1,0 +1,9 @@
+.drop-down{
+  display: inline;
+}
+body{
+  background-color: coral;
+}
+label, input{
+  color:black;
+}
