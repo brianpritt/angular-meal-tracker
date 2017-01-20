@@ -15,11 +15,12 @@ import { Meal} from './meal.model';
     </div>
   </nav>
 
-  <meal-list [childMealList]="masterMealList"> </meal-list>
-  <new-meal [childNewMeal]="newMeal" (newAddSender)="doneAdding()" (newMealSender)="addMeal($event)" (clickSender)="editMeal($event)"></new-meal>
+  <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"> </meal-list>
+
+  <new-meal [childNewMeal]="newMeal" (newAddSender)="doneAdding()" (newMealSender)="addMeal($event)"></new-meal>
 
   <button class="btn" *ngIf="!newMeal" (click)="addMealFormShow()">Add Meal</button>
-  <edit-meal[childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
+  <edit-meal [childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
 
 
   `
