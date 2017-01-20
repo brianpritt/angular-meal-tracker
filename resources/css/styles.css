@@ -7,3 +7,10 @@ body{
 label, input{
   color:black;
 }
+.card-panel{
+  height: 300px;
+}
+.edit-btn{
+  position: absolute;
+  
+}

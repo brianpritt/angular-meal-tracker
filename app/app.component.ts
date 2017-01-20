@@ -7,19 +7,18 @@ import { Meal} from './meal.model';
   `
   <nav>
     <div class="nav-wrapper grey darken-4 z-depth-2">
-      <a href="#" class="brand-logo center ">Meal Tracker</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down ">
-        <li><a>About</a> </li>
-        <li><a>Resources</a></li>
+      <a href="/" class="brand-logo center ">Meal Tracker</a>
+      <ul id="nav-mobile" class="left ">
+      <li><button class=" btn hoverable purple darken-4" *ngIf="!newMeal" (click)="addMealFormShow()">Add Meal</button></li>
+
       </ul>
     </div>
   </nav>
-
+  <br>
+  <new-meal [childNewMeal]="newMeal" (newAddSender)="doneAdding()" (newMealSender)="addMeal($event)"></new-meal>
   <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"> </meal-list>
 
-  <new-meal [childNewMeal]="newMeal" (newAddSender)="doneAdding()" (newMealSender)="addMeal($event)"></new-meal>
 
-  <button class="btn hoverable purple darken-4" *ngIf="!newMeal" (click)="addMealFormShow()">Add Meal</button>
   <edit-meal [childSelectedMeal]="selectedMeal" (doneEditingSender)="doneEditing()"></edit-meal>
 
 
@@ -27,10 +26,10 @@ import { Meal} from './meal.model';
 })
 export class AppComponent{
   masterMealList: Meal[]= [
-  new Meal("hamburger", "No Condiments", 125),
-  new Meal("Peaches", "Totally bathed in sugar", 500),
-  new Meal("Cucumber","With ranch dressing", 250),
-  new Meal("Cereal","Coco Puffs", 800)
+  new Meal("Hamburger", "No Condiments, with bun lettuce and tomato.", 425),
+  new Meal("Baked peaches", "Totally bathed in sugar, with a dollop of whipped cream", 500),
+  new Meal("Cucumber","With ranch dressing, and pumpkin seeds", 250),
+  new Meal("Cereal","Coco Puffs with milk and sugar", 1000)
   ]
   newMeal = null;
   selectedMeal = null;

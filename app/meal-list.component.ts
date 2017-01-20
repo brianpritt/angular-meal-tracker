@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template:
   `
-  <select class="drop-down input-field" (change)="onChange($event.target.value)">
+  <select class="drop-down input-field col s6 m6" (change)="onChange($event.target.value)">
     <option value="allMeals" selected="selected">All Meals</option>
     <option value="lowCalories">Low Calorie Meals</option>
     <option value="highCalories">High Calorie Meals</option>
@@ -18,7 +18,7 @@ import { Meal } from './meal.model';
             <div>{{currentMeal.description}}</div>
             <div>cal: {{currentMeal.calories}}</div>
             <hr>
-            <button class="btn indigo darken-1" (click)='editMeal(currentMeal)'> Edit This Meal</button>
+            <button class="edit-btn btn indigo darken-1" (click)='editMeal(currentMeal)'> Edit This Meal</button>
             </span>
           </div>
         </div>

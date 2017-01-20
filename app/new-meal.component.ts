@@ -5,7 +5,7 @@ import{ Meal } from './meal.model';
   selector: "new-meal",
   template:
   `
-  <div>
+  <div class="container">
     <div *ngIf="childNewMeal">
       <h3>Add New Meal</h3>
       <label>Meal: </label>
